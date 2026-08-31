@@ -1,5 +1,5 @@
 import {
-  SemesterData,
+  EducationData,
   ProjectData,
   ExperienceData,
   AchievementData,
@@ -20,8 +20,8 @@ export const PERSONAL_INFO = {
   linkedin: 'https://www.linkedin.com/in/surbhi-g001',
   github: 'https://github.com/SurbhiX1',
   cvPath: '/assets/Surbhi-CV.pdf',
+  photoPath: '/assets/profile.jpg',
   supportingText: 'Building practical solutions through code, curiosity, and continuous learning.',
-  statusBadge: 'Currently Learning • Building • Exploring',
   aboutParagraphs: [
     'I am a Computer Science and Engineering student at Lovely Professional University with a strong academic foundation and a growing interest in software development and AI/ML.',
     'I enjoy turning concepts into practical projects, solving problems through code and learning by building.',
@@ -36,72 +36,20 @@ export const PERSONAL_INFO = {
   ],
 };
 
-export const CORE_VALUES = [
-  {
-    prefix: 'I BUILD',
-    statement: 'practical technical solutions.',
-    description: 'Bridging logic and tangible utility through working software and integrated IoT systems.',
-    tag: 'Engineering',
-  },
-  {
-    prefix: 'I LEARN',
-    statement: 'through hands-on implementation.',
-    description: 'Mastering concepts not just through theory, but by writing code, testing edge cases, and debugging.',
-    tag: 'Growth',
-  },
-  {
-    prefix: 'I EXPLORE',
-    statement: 'software development and AI/ML.',
-    description: 'Diving into intelligent systems, data structures, algorithm design, and modern computing tools.',
-    tag: 'Curiosity',
-  },
-  {
-    prefix: 'I COLLABORATE',
-    statement: 'through teams, organizations and campus activities.',
-    description: 'Leading event initiatives, maintaining data records, and bridging student perspectives with faculty.',
-    tag: 'Leadership',
-  },
-  {
-    prefix: 'I COMPETE',
-    statement: 'through hackathons and challenges.',
-    description: 'Thriving under time constraints, ideating under pressure, and delivering results with multidisciplinary teams.',
-    tag: 'Drive',
-  },
-];
-
-export const SEMESTER_DATA: SemesterData[] = [
-  {
-    semester: 'Semester I',
-    tgpa: 9.61,
-    period: 'Aug 2025 – Dec 2025',
-    highlights: ['Outstanding (O) in Mathematics, Python & Basic EEE', 'Consistent A+ in Laboratory & Computing'],
-    courses: [
-      { code: 'CHE110', name: 'Environmental Studies', grade: 'A+', gradeDescription: 'Excellent' },
-      { code: 'CSE111', name: 'Orientation to Computing-I', grade: 'A+', gradeDescription: 'Excellent' },
-      { code: 'CSE326', name: 'Internet Programming Laboratory', grade: 'A+', gradeDescription: 'Excellent' },
-      { code: 'ECE249', name: 'Basic Electrical and Electronics Engineering', grade: 'O', gradeDescription: 'Outstanding' },
-      { code: 'ECE279', name: 'Basic Electrical and Electronics Engineering Laboratory', grade: 'A+', gradeDescription: 'Excellent' },
-      { code: 'INT108', name: 'Python Programming', grade: 'O', gradeDescription: 'Outstanding' },
-      { code: 'MTH165', name: 'Mathematics for Engineers', grade: 'O', gradeDescription: 'Outstanding' },
-    ],
-  },
-  {
-    semester: 'Semester II',
-    tgpa: 9.41,
-    period: 'Jan 2026 – May 2026',
-    highlights: ['Outstanding (O) in Computer Programming, Software Engineering & DBMS', 'A+ in Engineering Physics & Advanced Communication'],
-    courses: [
-      { code: 'CSE101', name: 'Computer Programming', grade: 'O', gradeDescription: 'Outstanding' },
-      { code: 'CSE121', name: 'Orientation to Computing-II', grade: 'A+', gradeDescription: 'Excellent' },
-      { code: 'CSE320', name: 'Software Engineering', grade: 'O', gradeDescription: 'Outstanding' },
-      { code: 'INT306', name: 'Database Management Systems', grade: 'O', gradeDescription: 'Outstanding' },
-      { code: 'MEC136', name: 'Engineering Drawing with AutoCAD', grade: 'O', gradeDescription: 'Outstanding' },
-      { code: 'MTH166', name: 'Differential Equations and Vector Calculus', grade: 'A', gradeDescription: 'Very Good' },
-      { code: 'PEL125', name: 'Upper Intermediate Communication Skills-I', grade: 'A+', gradeDescription: 'Excellent' },
-      { code: 'PHY110', name: 'Engineering Physics', grade: 'A+', gradeDescription: 'Excellent' },
-    ],
-  },
-];
+export const EDUCATION_DATA: EducationData = {
+  institution: 'Lovely Professional University',
+  degree: 'Bachelor of Technology — Computer Science and Engineering',
+  location: 'Punjab, India',
+  period: '2025 – 2029',
+  currentCgpa: '9.49',
+  cgpaLabel: 'Current CGPA',
+  status: 'In Progress • Undergraduate Degree',
+  highlights: [
+    'Strong foundation in Object-Oriented Programming, Data Structures & Python',
+    'Comprehensive coursework in Database Management, Mathematics & Software Systems',
+    'Consistent top-tier academic performance and engineering problem solving',
+  ],
+};
 
 export const SKILLS_DATA = {
   programming: [
@@ -450,13 +398,6 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     tag: 'Campus Leadership',
   },
   {
-    date: 'December 2025',
-    title: 'Semester I Completed — TGPA 9.61',
-    category: 'academic',
-    summary: 'Achieved outstanding academic standing with top grades in Mathematics, Python Programming, and Electrical Engineering.',
-    tag: 'Academic Milestone',
-  },
-  {
     date: 'Late 2025 / Early 2026',
     title: 'Secured Runner-up at HackManthon Hackathon',
     category: 'achievement',
@@ -485,13 +426,6 @@ export const TIMELINE_MILESTONES: TimelineMilestone[] = [
     tag: 'Student Representation',
   },
   {
-    date: 'May 2026',
-    title: 'Semester II Completed — TGPA 9.41',
-    category: 'academic',
-    summary: 'Completed second semester with Outstanding (O) marks in Computer Programming, Software Engineering, and DBMS.',
-    tag: 'Academic Milestone',
-  },
-  {
     date: 'Summer Period',
     title: 'Times of India Summer / CDP Practical Experience',
     category: 'experience',
@@ -507,7 +441,7 @@ export const TERMINAL_COMMANDS: Record<string, { output: string; type?: 'list' |
   • about           - Learn about Surbhi's background
   • skills          - List technical skills & proficiencies
   • projects        - View built projects & details
-  • education       - Show university & semester grades
+  • education       - Show university & current CGPA
   • experience      - Leadership & organizational roles
   • achievements    - Hackathons & championships
   • certifications  - Verified credentials & courses
@@ -525,7 +459,7 @@ Focus: Software Development + AI/ML + Problem Solving`,
     type: 'text',
   },
   about: {
-    output: `I am a Computer Science and Engineering student at Lovely Professional University with a strong academic foundation (9.61 & 9.41 TGPAs) and a passion for practical engineering.
+    output: `I am a Computer Science and Engineering student at Lovely Professional University with a strong academic foundation (Current CGPA: 9.49) and a passion for practical engineering.
 I enjoy turning ideas into real code, IoT systems, and software solutions while fostering leadership, student representation, and athletic collaboration.`,
     type: 'text',
   },
@@ -551,11 +485,10 @@ I enjoy turning ideas into real code, IoT systems, and software solutions while 
     type: 'text',
   },
   education: {
-    output: `Institution: Lovely Professional University, Punjab, India
-Degree     : B.Tech in Computer Science and Engineering (Started Aug 2025)
-Records    :
-  • Semester I  : TGPA 9.61 (Outstanding in Math, Python, Basic EEE)
-  • Semester II : TGPA 9.41 (Outstanding in Programming, SWE, DBMS, AutoCAD)`,
+    output: `Institution : Lovely Professional University, Punjab, India
+Degree      : Bachelor of Technology — Computer Science and Engineering (2025 – 2029)
+Status      : In Progress • Undergraduate Degree
+Academic    : Current CGPA: 9.49`,
     type: 'text',
   },
   experience: {
@@ -588,8 +521,7 @@ Records    :
     type: 'text',
   },
   status: {
-    output: `Status: Currently Learning • Building • Exploring
-Academic Standing: Active (TGPAs: 9.61 & 9.41)
+    output: `Current Academic Standing: CGPA 9.49
 Availability: Open for internships, collaborative projects, and hackathons`,
     type: 'text',
   },

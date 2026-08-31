@@ -1,16 +1,11 @@
-export interface CourseGrade {
-  code: string;
-  name: string;
-  grade: string;
-  gradeDescription: string;
-  credits?: number;
-}
-
-export interface SemesterData {
-  semester: string;
-  tgpa: number;
+export interface EducationData {
+  institution: string;
+  degree: string;
+  location: string;
   period: string;
-  courses: CourseGrade[];
+  currentCgpa: string;
+  cgpaLabel: string;
+  status: string;
   highlights: string[];
 }
 

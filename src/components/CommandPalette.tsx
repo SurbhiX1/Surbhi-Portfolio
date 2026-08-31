@@ -71,7 +71,7 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
       id: 'nav-education',
       label: 'Education & Academic Records',
       category: 'Navigation',
-      description: 'LPU B.Tech CSE (TGPA 9.61 & 9.41)',
+      description: 'LPU B.Tech CSE (Current CGPA: 9.49)',
       icon: GraduationCap,
       action: () => scrollToSection('education'),
     },
@@ -179,7 +179,6 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === '/' && !isOpen && !(e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement)) {
         e.preventDefault();
-        // Trigger open via parent or event
       }
 
       if (!isOpen) return;
@@ -210,17 +209,17 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
   return (
     <div
       id="command-palette-backdrop"
-      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-black/70 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-start justify-center pt-16 sm:pt-24 px-4 bg-[#1C1B18]/50 backdrop-blur-md transition-opacity animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
         id="command-palette-modal"
-        className="w-full max-w-2xl bg-neutral-900 border border-neutral-800 rounded-2xl shadow-2xl overflow-hidden text-neutral-100 flex flex-col max-h-[80vh]"
+        className="w-full max-w-2xl bg-[#FFFCF5] border border-[#DED6C8] rounded-3xl shadow-2xl overflow-hidden text-[#1C1B18] flex flex-col max-h-[80vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Search header */}
-        <div className="flex items-center px-4 py-3.5 border-b border-neutral-800 gap-3">
-          <Search className="w-5 h-5 text-teal-400 shrink-0" />
+        <div className="flex items-center px-4 py-3.5 border-b border-[#DED6C8] gap-3">
+          <Search className="w-5 h-5 text-[#B08D3C] shrink-0" />
           <input
             ref={inputRef}
             id="command-palette-input"
@@ -228,12 +227,12 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             placeholder="Type a command, section name, or action... (e.g., 'Projects', 'Education')"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="w-full bg-transparent text-sm sm:text-base outline-none placeholder:text-neutral-500 text-neutral-100 font-sans"
+            className="w-full bg-transparent text-sm sm:text-base outline-none placeholder:text-[#6F6A60] text-[#1C1B18] font-sans"
           />
           {query && (
             <button
               onClick={() => setQuery('')}
-              className="text-neutral-400 hover:text-neutral-200 text-xs px-1.5 py-0.5 rounded bg-neutral-800"
+              className="text-[#6F6A60] hover:text-[#1C1B18] text-xs px-2 py-0.5 rounded bg-[#F1EBDD] cursor-pointer"
             >
               Clear
             </button>
@@ -242,16 +241,16 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
             id="command-palette-close-btn"
             onClick={onClose}
             aria-label="Close command palette"
-            className="p-1 rounded-lg text-neutral-400 hover:text-neutral-200 hover:bg-neutral-800 transition-colors"
+            className="p-1 rounded-lg text-[#6F6A60] hover:text-[#1C1B18] hover:bg-[#F1EBDD] transition-colors cursor-pointer"
           >
             <X className="w-4 h-4" />
           </button>
         </div>
 
         {/* Command list */}
-        <div ref={listRef} className="overflow-y-auto p-2 divide-y divide-neutral-800/40">
+        <div ref={listRef} className="overflow-y-auto p-2 divide-y divide-[#DED6C8]/40">
           {filteredCommands.length === 0 ? (
-            <div className="py-12 text-center text-neutral-500 text-sm">
+            <div className="py-12 text-center text-[#6F6A60] text-sm font-sans">
               No results found for &ldquo;{query}&rdquo;
             </div>
           ) : (
@@ -265,33 +264,33 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
                     id={`command-item-${cmd.id}`}
                     onClick={() => cmd.action()}
                     onMouseEnter={() => setSelectedIndex(idx)}
-                    className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-xl text-left transition-all duration-150 ${
+                    className={`w-full flex items-center justify-between px-3.5 py-2.5 rounded-2xl text-left transition-all duration-150 cursor-pointer ${
                       isSelected
-                        ? 'bg-neutral-800/90 text-teal-300 border border-teal-500/30'
-                        : 'text-neutral-300 hover:bg-neutral-800/50 border border-transparent'
+                        ? 'bg-[#F1EBDD] text-[#8C6D23] border border-[#B08D3C]/40'
+                        : 'text-[#1C1B18] hover:bg-[#F7F3EA] border border-transparent'
                     }`}
                   >
                     <div className="flex items-center gap-3 min-w-0">
                       <div
-                        className={`p-2 rounded-lg ${
-                          isSelected ? 'bg-teal-500/20 text-teal-300' : 'bg-neutral-800 text-neutral-400'
+                        className={`p-2 rounded-xl ${
+                          isSelected ? 'bg-[#FFFCF5] text-[#B08D3C]' : 'bg-[#F1EBDD] text-[#6F6A60]'
                         }`}
                       >
                         <IconComponent className="w-4 h-4" />
                       </div>
                       <div className="truncate">
-                        <div className="text-sm font-medium text-neutral-100 flex items-center gap-2">
+                        <div className="text-sm font-medium text-[#1C1B18] flex items-center gap-2 font-sans">
                           <span>{cmd.label}</span>
-                          <span className="text-[10px] uppercase font-mono px-1.5 py-0.5 rounded bg-neutral-800/80 text-neutral-400">
+                          <span className="text-[10px] uppercase font-mono px-2 py-0.5 rounded-full bg-[#F1EBDD] text-[#6F6A60]">
                             {cmd.category}
                           </span>
                         </div>
                         {cmd.description && (
-                          <div className="text-xs text-neutral-400 truncate mt-0.5">{cmd.description}</div>
+                          <div className="text-xs text-[#6F6A60] truncate mt-0.5 font-sans">{cmd.description}</div>
                         )}
                       </div>
                     </div>
-                    <div className="flex items-center gap-1 shrink-0 ml-2 text-neutral-500">
+                    <div className="flex items-center gap-1 shrink-0 ml-2 text-[#6F6A60]">
                       {cmd.category === 'Social' ? (
                         <ExternalLink className="w-3.5 h-3.5" />
                       ) : (
@@ -306,20 +305,20 @@ export const CommandPalette: React.FC<CommandPaletteProps> = ({
         </div>
 
         {/* Footer shortcuts */}
-        <div className="px-4 py-2.5 bg-neutral-950/60 border-t border-neutral-800 flex items-center justify-between text-[11px] text-neutral-400 font-mono">
+        <div className="px-4 py-2.5 bg-[#F7F3EA] border-t border-[#DED6C8] flex items-center justify-between text-[11px] text-[#6F6A60] font-mono">
           <div className="flex items-center gap-3">
             <span>
-              <kbd className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 border border-neutral-700">↑</kbd>{' '}
-              <kbd className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 border border-neutral-700">↓</kbd> navigate
+              <kbd className="px-1.5 py-0.5 rounded bg-[#FFFCF5] text-[#1C1B18] border border-[#DED6C8]">↑</kbd>{' '}
+              <kbd className="px-1.5 py-0.5 rounded bg-[#FFFCF5] text-[#1C1B18] border border-[#DED6C8]">↓</kbd> navigate
             </span>
             <span>
-              <kbd className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 border border-neutral-700">↵</kbd> select
+              <kbd className="px-1.5 py-0.5 rounded bg-[#FFFCF5] text-[#1C1B18] border border-[#DED6C8]">↵</kbd> select
             </span>
             <span>
-              <kbd className="px-1.5 py-0.5 rounded bg-neutral-800 text-neutral-300 border border-neutral-700">esc</kbd> close
+              <kbd className="px-1.5 py-0.5 rounded bg-[#FFFCF5] text-[#1C1B18] border border-[#DED6C8]">esc</kbd> close
             </span>
           </div>
-          <span className="hidden sm:inline text-neutral-500">Surbhi • Portfolio Command Center</span>
+          <span className="hidden sm:inline text-[#6F6A60]">Surbhi • Portfolio Command Center</span>
         </div>
       </div>
     </div>

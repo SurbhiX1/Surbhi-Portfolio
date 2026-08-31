@@ -80,7 +80,10 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-neutral-950 text-neutral-100">
+    <div className="min-h-screen font-sans bg-[#F7F3EA] text-[#1C1B18] relative selection:bg-[#B08D3C]/20 selection:text-[#1C1B18]">
+      {/* Global subtle premium paper grain & tactile background texture */}
+      <div className="paper-grain-overlay pointer-events-none fixed inset-0 z-0" aria-hidden="true" />
+
       {/* Scroll Progress Bar at top */}
       <ScrollProgress />
 
@@ -96,13 +99,15 @@ export function App() {
 
       {/* View Switcher: Dedicated Detail Page vs Main Portfolio */}
       {activeSkillCategory ? (
-        <SkillDetailPage
-          categoryId={activeSkillCategory}
-          onBack={handleBackFromSkillDetail}
-          onSelectCategory={handleSelectSkillCategory}
-        />
+        <div className="relative z-10">
+          <SkillDetailPage
+            categoryId={activeSkillCategory}
+            onBack={handleBackFromSkillDetail}
+            onSelectCategory={handleSelectSkillCategory}
+          />
+        </div>
       ) : (
-        <>
+        <div className="relative z-10">
           {/* Main Content Sections */}
           <main id="main-content" className="relative">
             <HeroSection />
@@ -118,7 +123,7 @@ export function App() {
 
           {/* Footer */}
           <Footer />
-        </>
+        </div>
       )}
 
       {/* Interactive Global Modals & Overlays */}

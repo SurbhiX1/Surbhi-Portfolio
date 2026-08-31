@@ -19,12 +19,12 @@ export const ScrollProgress: React.FC = () => {
   return (
     <div
       id="scroll-progress-bar-container"
-      className="fixed top-0 left-0 right-0 z-50 h-1 bg-neutral-900/30 backdrop-blur-sm pointer-events-none"
+      className="fixed top-0 left-0 right-0 z-50 h-1 bg-[#DED6C8]/40 backdrop-blur-sm pointer-events-none"
       aria-hidden="true"
     >
       <div
         id="scroll-progress-indicator"
-        className="h-full bg-gradient-to-r from-teal-400 via-emerald-400 to-cyan-400 transition-all duration-75 ease-out shadow-[0_0_8px_rgba(20,184,166,0.5)]"
+        className="h-full bg-gradient-to-r from-[#B08D3C] via-[#D6BD7A] to-[#B08D3C] transition-all duration-75 ease-out shadow-[0_0_8px_rgba(176,141,60,0.4)]"
         style={{ width: `${scrollProgress}%` }}
       />
     </div>
