@@ -16,12 +16,17 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
   className = '',
   delay = 0,
   staggerIndex = 0,
-  staggerMs = 80,
+  staggerMs = 90,
   direction = 'up',
   as: Component = 'div',
   id,
 }) => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(() => {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      return true;
+    }
+    return false;
+  });
   const elementRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -34,26 +39,19 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
     const element = elementRef.current;
     if (!element) return;
 
-    // Check if element is already in initial viewport on mount
-    const rect = element.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      setIsVisible(true);
-      return;
-    }
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             setIsVisible(true);
-            // Trigger ONCE: unobserve after revealing to prevent repeated trigger
+            // Trigger ONCE: unobserve after revealing to prevent repeated triggers
             observer.unobserve(entry.target);
           }
         });
       },
       {
-        threshold: 0.08,
-        rootMargin: '0px 0px -40px 0px',
+        threshold: 0.05,
+        rootMargin: '0px 0px -10% 0px',
       }
     );
 
@@ -71,17 +69,15 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({
       ref={elementRef}
       id={id}
       style={{
-        transitionDuration: '650ms',
-        transitionTimingFunction: 'cubic-bezier(0.16, 1, 0.3, 1)',
         transitionDelay: isVisible ? `${totalDelay}ms` : '0ms',
-      }}
-      className={`transition-all ${
-        isVisible
-          ? 'opacity-100 translate-y-0'
+        transform: isVisible
+          ? 'translateY(0)'
           : direction === 'up'
-          ? 'opacity-0 translate-y-6 pointer-events-none'
-          : 'opacity-0 pointer-events-none'
-      } ${className}`}
+          ? 'translateY(60px)'
+          : 'none',
+        opacity: isVisible ? 1 : 0.45,
+      }}
+      className={`scroll-reveal-item ${className}`}
     >
       {children}
     </Component>

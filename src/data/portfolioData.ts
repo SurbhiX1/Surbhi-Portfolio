@@ -15,6 +15,7 @@ export const PERSONAL_INFO = {
   degree: 'Bachelor of Technology in Computer Science and Engineering',
   started: 'August 2025',
   targetYear: 'Class of 2029',
+  location: 'Bareilly, Uttar Pradesh',
   careerDirection: 'Aspiring AI/ML Engineer and Software Developer',
   email: 'gangwarsurbhi57@gmail.com',
   linkedin: 'https://www.linkedin.com/in/surbhi-g001',

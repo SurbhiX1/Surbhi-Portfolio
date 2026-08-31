@@ -4,6 +4,7 @@ import {
   Linkedin,
   Mail,
   ChevronRight,
+  MapPin,
 } from 'lucide-react';
 import { PERSONAL_INFO } from '../data/portfolioData';
 
@@ -20,6 +21,16 @@ export const HeroSection: React.FC = () => {
       id="hero"
       className="relative min-h-[85vh] sm:min-h-[88vh] pt-28 sm:pt-32 pb-16 flex flex-col justify-center overflow-hidden bg-[#F7F3EA]"
     >
+      {/* Subtle cinematic honeycomb mesh layers with gentle radial fades */}
+      <div 
+        className="absolute inset-0 honeycomb-pattern honeycomb-mask-hero opacity-75 pointer-events-none" 
+        aria-hidden="true" 
+      />
+      <div 
+        className="absolute inset-0 honeycomb-pattern honeycomb-mask-corner opacity-50 pointer-events-none" 
+        aria-hidden="true" 
+      />
+
       {/* Subtle background ambient mesh */}
       <div className="absolute top-1/4 right-1/4 w-[500px] h-[350px] bg-[#D6BD7A]/10 rounded-full blur-3xl pointer-events-none" />
       <div className="absolute bottom-10 left-10 w-72 h-72 bg-[#B08D3C]/5 rounded-full blur-3xl pointer-events-none" />
@@ -45,14 +56,15 @@ export const HeroSection: React.FC = () => {
               &ldquo;{PERSONAL_INFO.supportingText}&rdquo;
             </p>
 
-            {/* University & Degree context tag */}
-            <div className="flex flex-wrap items-center gap-2 text-xs font-mono text-[#6F6A60]">
-              <span className="px-3 py-1 rounded-md bg-[#FFFCF5] border border-[#DED6C8] text-[#1C1B18] shadow-xs">
-                Lovely Professional University
-              </span>
-              <span className="px-3 py-1 rounded-md bg-[#FFFCF5] border border-[#B08D3C]/40 text-[#8C6D23] font-semibold shadow-xs">
-                Started Aug 2025
-              </span>
+            {/* Location context badge */}
+            <div className="flex items-center gap-2 text-xs font-mono">
+              <div
+                id="hero-location-badge"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#FFFCF5] border border-[#B08D3C]/35 text-[#1C1B18] shadow-xs"
+              >
+                <MapPin className="w-3.5 h-3.5 text-[#B08D3C] shrink-0" />
+                <span className="text-[#1C1B18] font-medium tracking-tight">Bareilly, Uttar Pradesh</span>
+              </div>
             </div>
 
             {/* Action CTA — Explore My Work */}
