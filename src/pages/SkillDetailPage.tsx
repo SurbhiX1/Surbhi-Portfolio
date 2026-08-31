@@ -111,9 +111,9 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
   }, [categoryId]);
 
   return (
-    <div className="min-h-screen bg-[#F7F3EA] text-[#1C1B18] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-[#F6F1E8] text-[#172235] py-16 sm:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       {/* Background ambient lighting */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#D6BD7A]/10 rounded-full blur-3xl pointer-events-none -z-10" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[400px] bg-[#E2C98A]/15 rounded-full blur-3xl pointer-events-none -z-10" />
 
       <div className="max-w-4xl mx-auto space-y-12">
         {/* Back Navigation Bar */}
@@ -121,38 +121,38 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
           <button
             id="skill-detail-back-button"
             onClick={onBack}
-            className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#FFFCF5] border border-[#DED6C8] text-sm font-medium text-[#1C1B18] hover:text-[#B08D3C] hover:border-[#B08D3C] transition-all shadow-xs group cursor-pointer"
+            className="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl bg-[#FFFDF8] border border-[#DDD5C7] text-sm font-medium text-[#172235] hover:text-[#C49A4A] hover:border-[#C49A4A] transition-all shadow-xs group cursor-pointer"
           >
-            <ArrowLeft className="w-4 h-4 text-[#B08D3C] group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft className="w-4 h-4 text-[#C49A4A] group-hover:-translate-x-1 transition-transform" />
             <span>← Back to Portfolio</span>
           </button>
 
-          <span className="text-xs font-mono text-[#6F6A60]">
+          <span className="text-xs font-mono text-[#5C6573]">
             [ TECHNICAL CAPABILITIES ]
           </span>
         </div>
 
         {/* Header Title Block */}
-        <div className="space-y-4 pb-6 border-b border-[#DED6C8]">
+        <div className="space-y-4 pb-6 border-b border-[#D6DFE8]">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#F1EBDD] border border-[#DED6C8] flex items-center justify-center text-[#B08D3C]">
-              <Icon className="w-5 h-5 text-[#B08D3C]" />
+            <div className="w-10 h-10 rounded-xl bg-[#E8EDF3] border border-[#172235] space-y-3 hover:border-[#C49A4A] flex items-center justify-center text-[#172235]">
+              <Icon className="w-5 h-5 text-[#172235]" />
             </div>
             <div className="flex items-center gap-2">
-              <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#F1EBDD] text-[#8C6D23] border border-[#DED6C8]">
+              <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#E8EDF3] text-[#172235] border border-[#D6DFE8] font-semibold">
                 {category.badge}
               </span>
-              <span className="text-xs font-mono text-[#6F6A60]">
+              <span className="text-xs font-mono text-[#3D4D65]">
                 • {category.countText}
               </span>
             </div>
           </div>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#1C1B18] font-sans">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-[#172235] font-sans">
             {category.title}
           </h1>
 
-          <p className="text-[#6F6A60] text-base sm:text-lg leading-relaxed max-w-2xl font-sans">
+          <p className="text-[#3D4D65] text-base sm:text-lg leading-relaxed max-w-2xl font-sans">
             {category.subtitle}
           </p>
         </div>
@@ -164,15 +164,15 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
               {SKILLS_DATA.programming.map((skill) => (
                 <div
                   key={skill.name}
-                  className="p-5 rounded-2xl bg-[#FFFCF5] border border-[#DED6C8] space-y-3 hover:border-[#B08D3C]/50 transition-all shadow-xs"
+                  className="p-5 rounded-2xl bg-[#FFFDF8] border border-[#D6DFE8] space-y-3 hover:border-[#26354D] transition-all shadow-xs"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-base font-bold text-[#1C1B18] font-mono">{skill.name}</span>
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#F1EBDD] text-[#8C6D23] border border-[#DED6C8]">
+                    <span className="text-base font-bold text-[#172235] font-mono">{skill.name}</span>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#E8EDF3] text-[#172235]border border-[#172235] space-y-3 hover:border-[#C49A4A] font-semibold">
                       {skill.level}
                     </span>
                   </div>
-                  <p className="text-sm text-[#6F6A60] leading-relaxed font-sans">
+                  <p className="text-sm text-[#3D4D65] leading-relaxed font-sans">
                     {skill.description}
                   </p>
                 </div>
@@ -185,15 +185,15 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
               {SKILLS_DATA.computerScience.map((skill) => (
                 <div
                   key={skill.name}
-                  className="p-5 rounded-2xl bg-[#FFFCF5] border border-[#DED6C8] space-y-3 hover:border-[#B08D3C]/50 transition-all shadow-xs"
+                  className="p-5 rounded-2xl bg-[#FFFDF8] border border-[#172235] space-y-3 hover:border-[#C49A4A] transition-all shadow-xs"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-base font-bold text-[#1C1B18] font-mono">{skill.name}</span>
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#F1EBDD] text-[#8C6D23] border border-[#DED6C8]">
+                    <span className="text-base font-bold text-[#172235] font-mono">{skill.name}</span>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#E8EDF3] text-[#172235] border border-[#D6DFE8] font-semibold">
                       {skill.level}
                     </span>
                   </div>
-                  <p className="text-sm text-[#6F6A60] leading-relaxed font-sans">
+                  <p className="text-sm text-[#3D4D65] leading-relaxed font-sans">
                     {skill.description}
                   </p>
                 </div>
@@ -206,15 +206,15 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
               {SKILLS_DATA.web.map((skill) => (
                 <div
                   key={skill.name}
-                  className="p-5 rounded-2xl bg-[#FFFCF5] border border-[#DED6C8] space-y-3 hover:border-[#B08D3C]/50 transition-all shadow-xs"
+                  className="p-5 rounded-2xl bg-[#FFFDF8] border border-[#172235] space-y-3 hover:border-[#C49A4A] transition-all shadow-xs"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-base font-bold text-[#1C1B18] font-mono">{skill.name}</span>
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#F1EBDD] text-[#8C6D23] border border-[#DED6C8]">
+                    <span className="text-base font-bold text-[#172235] font-mono">{skill.name}</span>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#E8EDF3] text-[#172235] border border-[#D6DFE8] font-semibold">
                       {skill.level}
                     </span>
                   </div>
-                  <p className="text-sm text-[#6F6A60] leading-relaxed font-sans">
+                  <p className="text-sm text-[#3D4D65] leading-relaxed font-sans">
                     {skill.description}
                   </p>
                 </div>
@@ -227,15 +227,15 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
               {SKILLS_DATA.database.map((skill) => (
                 <div
                   key={skill.name}
-                  className="p-6 rounded-2xl bg-[#FFFCF5] border border-[#DED6C8] space-y-3 hover:border-[#B08D3C]/50 transition-all shadow-xs"
+                  className="p-6 rounded-2xl bg-[#FFFDF8] border border-[#172235] space-y-3 hover:border-[#C49A4A] transition-all shadow-xs"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-base font-bold text-[#1C1B18] font-mono">{skill.name}</span>
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#F1EBDD] text-[#8C6D23] border border-[#DED6C8]">
+                    <span className="text-base font-bold text-[#172235] font-mono">{skill.name}</span>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#E8EDF3] text-[#172235] border border-[#D6DFE8] font-semibold">
                       {skill.level}
                     </span>
                   </div>
-                  <p className="text-sm text-[#6F6A60] leading-relaxed font-sans">
+                  <p className="text-sm text-[#3D4D65] leading-relaxed font-sans">
                     {skill.description}
                   </p>
                 </div>
@@ -248,15 +248,15 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
               {SKILLS_DATA.tools.map((tool) => (
                 <div
                   key={tool.name}
-                  className="p-5 rounded-2xl bg-[#FFFCF5] border border-[#DED6C8] space-y-3 hover:border-[#B08D3C]/50 transition-all shadow-xs"
+                  className="p-5 rounded-2xl bg-[#FFFDF8] border border-[#172235] space-y-3 hover:border-[#C49A4A] transition-all shadow-xs"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-base font-bold text-[#1C1B18] font-mono">{tool.name}</span>
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#F1EBDD] text-[#6F6A60] border border-[#DED6C8]">
+                    <span className="text-base font-bold text-[#172235] font-mono">{tool.name}</span>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#E8EDF3] text-[#3D4D65] border border-[#D6DFE8]">
                       {tool.level}
                     </span>
                   </div>
-                  <p className="text-sm text-[#6F6A60] leading-relaxed font-sans">
+                  <p className="text-sm text-[#3D4D65] leading-relaxed font-sans">
                     {tool.description}
                   </p>
                 </div>
@@ -269,15 +269,15 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
               {SKILLS_DATA.platforms.map((plat) => (
                 <div
                   key={plat.name}
-                  className="p-5 rounded-2xl bg-[#FFFCF5] border border-[#DED6C8] space-y-3 hover:border-[#B08D3C]/50 transition-all shadow-xs"
+                  className="p-5 rounded-2xl bg-[#FFFDF8] border border-[#172235] space-y-3 hover:border-[#C49A4A] transition-all shadow-xs"
                 >
                   <div className="flex items-center justify-between">
-                    <span className="text-base font-bold text-[#1C1B18] font-mono">{plat.name}</span>
-                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#F1EBDD] text-[#8C6D23] border border-[#DED6C8]">
+                    <span className="text-base font-bold text-[#172235] font-mono">{plat.name}</span>
+                    <span className="text-xs font-mono px-2.5 py-1 rounded-md bg-[#E8EDF3] text-[#172235] border border-[#D6DFE8] font-semibold">
                       {plat.level}
                     </span>
                   </div>
-                  <p className="text-sm text-[#6F6A60] leading-relaxed font-sans">
+                  <p className="text-sm text-[#3D4D65] leading-relaxed font-sans">
                     {plat.description}
                   </p>
                 </div>
@@ -286,20 +286,20 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
           )}
 
           {category.id === 'softSkills' && (
-            <div className="p-6 rounded-3xl bg-[#FFFCF5] border border-[#DED6C8] space-y-6 shadow-xs">
+            <div className="p-6 rounded-3xl bg-[#FFFDF8] border border-[#D6DFE8] space-y-6 shadow-xs">
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                 {SKILLS_DATA.softSkills.map((skill) => (
                   <div
                     key={skill.name}
-                    className="p-4 rounded-xl bg-[#F7F3EA] border border-[#DED6C8] flex items-center justify-between gap-3 hover:border-[#B08D3C]/40 transition-colors"
+                    className="p-4 rounded-xl bg-[#E8EDF3] border border-[#D6DFE8] flex items-center justify-between gap-3 hover:border-[#26354D]/40 transition-colors"
                   >
                     <div className="flex items-center gap-2.5">
-                      <CheckCircle2 className="w-4 h-4 text-[#B08D3C] shrink-0" />
-                      <span className="text-sm font-medium text-[#1C1B18] font-sans">
+                      <CheckCircle2 className="w-4 h-4 text-[#C49A4A] shrink-0" />
+                      <span className="text-sm font-medium text-[#172235] font-sans">
                         {skill.name}
                       </span>
                     </div>
-                    <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#F1EBDD] text-[#6F6A60] shrink-0 border border-[#DED6C8]">
+                    <span className="text-[10px] font-mono uppercase px-2 py-0.5 rounded bg-[#FFFDF8] text-[#3D4D65] shrink-0 border border-[#D6DFE8]">
                       {skill.tag}
                     </span>
                   </div>
@@ -310,8 +310,8 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
         </div>
 
         {/* Other Categories Switcher & Bottom Navigation */}
-        <div className="pt-8 border-t border-[#DED6C8] space-y-6">
-          <div className="text-xs font-mono text-[#6F6A60] uppercase tracking-wider">
+        <div className="pt-8 border-t border-[#DDD5C7] space-y-6">
+          <div className="text-xs font-mono text-[#5C6573] uppercase tracking-wider">
             Explore Other Technical Categories
           </div>
 
@@ -322,20 +322,20 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
                 <button
                   key={other.id}
                   onClick={() => onSelectCategory(other.id)}
-                  className="p-3.5 rounded-xl bg-[#FFFCF5] border border-[#DED6C8] hover:border-[#B08D3C] hover:bg-[#F1EBDD] text-left transition-all group flex items-center justify-between shadow-xs cursor-pointer"
+                  className="p-3.5 rounded-xl bg-[#FFFDF8] border border-[#172235] space-y-3 hover:border-[#C49A4A] hover:bg-[#EEF1F4] text-left transition-all group flex items-center justify-between shadow-xs cursor-pointer"
                 >
                   <div className="flex items-center gap-2.5 min-w-0">
-                    <OtherIcon className="w-4 h-4 text-[#B08D3C] shrink-0" />
+                    <OtherIcon className="w-4 h-4 text-[#C49A4A] shrink-0" />
                     <div className="truncate">
-                      <div className="text-xs font-bold text-[#1C1B18] font-sans truncate group-hover:text-[#B08D3C] transition-colors">
+                      <div className="text-xs font-bold text-[#172235] font-sans truncate group-hover:text-[#C49A4A] transition-colors">
                         {other.title}
                       </div>
-                      <div className="text-[10px] font-mono text-[#6F6A60]">
+                      <div className="text-[10px] font-mono text-[#5C6573]">
                         {other.countText}
                       </div>
                     </div>
                   </div>
-                  <ChevronRight className="w-3.5 h-3.5 text-[#6F6A60] group-hover:text-[#B08D3C] group-hover:translate-x-0.5 transition-all shrink-0" />
+                  <ChevronRight className="w-3.5 h-3.5 text-[#5C6573] group-hover:text-[#C49A4A] group-hover:translate-x-0.5 transition-all shrink-0" />
                 </button>
               );
             })}
@@ -344,9 +344,9 @@ export const SkillDetailPage: React.FC<SkillDetailPageProps> = ({
           <div className="pt-4 flex justify-center">
             <button
               onClick={onBack}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FFFCF5] border border-[#DED6C8] text-sm font-medium text-[#1C1B18] hover:text-[#B08D3C] hover:border-[#B08D3C] transition-all shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#FFFDF8] border border-[#DDD5C7] text-sm font-medium text-[#172235] hover:text-[#C49A4A] hover:border-[#C49A4A] transition-all shadow-xs cursor-pointer"
             >
-              <ArrowLeft className="w-4 h-4 text-[#B08D3C]" />
+              <ArrowLeft className="w-4 h-4 text-[#C49A4A]" />
               <span>Return to Portfolio</span>
             </button>
           </div>

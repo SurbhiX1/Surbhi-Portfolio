@@ -83,7 +83,7 @@ export const Navbar: React.FC<NavbarProps> = ({
         id="main-navbar"
         className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
           isScrolled
-            ? 'bg-[#FFFCF5]/90 backdrop-blur-md border-b border-[#DED6C8] shadow-sm py-3'
+            ? 'bg-[#FFFDF8]/90 backdrop-blur-md border-b border-[#DDD5C7] shadow-sm py-3'
             : 'bg-transparent py-5'
         }`}
       >
@@ -97,29 +97,29 @@ export const Navbar: React.FC<NavbarProps> = ({
                 onNavigateHome();
               }
             }}
-            className="group flex items-center gap-2.5 text-[#1C1B18] focus:outline-none"
+            className="group flex items-center gap-2.5 text-[#172235] focus:outline-none"
             aria-label="Surbhi - Home"
           >
-            <div className="w-8 h-8 rounded-lg bg-[#FFFCF5] border border-[#DED6C8] flex items-center justify-center text-[#B08D3C] font-mono font-bold text-sm group-hover:border-[#B08D3C]/60 group-hover:shadow-[0_0_12px_rgba(176,141,60,0.2)] transition-all">
+            <div className="w-8 h-8 rounded-lg bg-[#FFFDF8] border border-[#DDD5C7] flex items-center justify-center text-[#C49A4A] font-mono font-bold text-sm group-hover:border-[#C49A4A]/60 group-hover:shadow-[0_0_12px_rgba(196,154,74,0.2)] transition-all">
               S
             </div>
             <div className="flex flex-col">
-              <span className="font-semibold tracking-tight text-base sm:text-lg text-[#1C1B18] group-hover:text-[#B08D3C] transition-colors font-sans">
-                Surbhi<span className="text-[#B08D3C]">.</span>
+              <span className="font-semibold tracking-tight text-base sm:text-lg text-[#172235] group-hover:text-[#C49A4A] transition-colors font-sans">
+                Surbhi<span className="text-[#C49A4A]">.</span>
               </span>
-              <span className="text-[10px] uppercase font-mono tracking-widest text-[#6F6A60]">
+              <span className="text-[10px] uppercase font-mono tracking-widest text-[#5C6573]">
                 CSE • LPU
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs font-medium text-[#6F6A60]">
+          <nav className="hidden lg:flex items-center gap-1 xl:gap-2 text-xs font-medium text-[#3D4D65]">
             {navLinks.map((link) => (
               <button
                 key={link.label}
                 onClick={() => handleNavClick(link.href)}
-                className="px-3 py-1.5 rounded-lg text-[#6F6A60] hover:text-[#1C1B18] hover:bg-[#F1EBDD]/70 transition-all duration-150"
+                className="px-3 py-1.5 rounded-lg text-[#3D4D65] hover:text-[#172235] hover:bg-[#E8EDF3] transition-all duration-150"
               >
                 {link.label}
               </button>
@@ -133,11 +133,11 @@ export const Navbar: React.FC<NavbarProps> = ({
               id="cmd-palette-nav-btn"
               onClick={onOpenCommandPalette}
               aria-label="Open Command Center (Shortcut: / or Ctrl+K)"
-              className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-[#FFFCF5] border border-[#DED6C8] text-[#6F6A60] hover:text-[#1C1B18] hover:border-[#B08D3C]/40 transition-all text-xs font-mono group shadow-xs"
+              className="flex items-center gap-2 px-2.5 py-1.5 rounded-lg bg-[#FFFDF8] border border-[#DDD5C7] text-[#3D4D65] hover:text-[#172235] hover:bg-[#E8EDF3] hover:border-[#C49A4A]/50 transition-all text-xs font-mono group shadow-xs"
             >
-              <Command className="w-3.5 h-3.5 text-[#B08D3C]" />
-              <span className="hidden sm:inline text-[#1C1B18]">Quick Command</span>
-              <kbd className="hidden sm:inline px-1.5 py-0.5 text-[10px] rounded bg-[#F1EBDD] text-[#6F6A60] border border-[#DED6C8]">
+              <Command className="w-3.5 h-3.5 text-[#C49A4A]" />
+              <span className="hidden sm:inline text-[#172235]">Quick Command</span>
+              <kbd className="hidden sm:inline px-1.5 py-0.5 text-[10px] rounded bg-[#E8EDF3] text-[#26354D] border border-[#D6DFE8]">
                 /
               </kbd>
             </button>
@@ -148,9 +148,9 @@ export const Navbar: React.FC<NavbarProps> = ({
               href={PERSONAL_INFO.cvPath}
               download="Surbhi-CV.pdf"
               onClick={handleDownloadCv}
-              className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#B08D3C]/10 hover:bg-[#B08D3C]/20 text-[#8C6D23] border border-[#B08D3C]/40 text-xs font-medium transition-all shadow-xs cursor-pointer"
+              className="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg bg-[#172235] hover:bg-[#26354D] text-[#FFFDF8] border border-[#C49A4A]/50 hover:border-[#C49A4A] text-xs font-medium transition-all shadow-xs cursor-pointer"
             >
-              <FileDown className="w-3.5 h-3.5 text-[#B08D3C]" />
+              <FileDown className="w-3.5 h-3.5 text-[#E2C98A]" />
               <span>Download CV</span>
             </a>
 
@@ -160,7 +160,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
               aria-expanded={mobileMenuOpen}
-              className="lg:hidden p-2 rounded-lg bg-[#FFFCF5] border border-[#DED6C8] text-[#1C1B18] hover:bg-[#F1EBDD]"
+              className="lg:hidden p-2 rounded-lg bg-[#FFFDF8] border border-[#DDD5C7] text-[#172235] hover:bg-[#E8EDF3]"
             >
               {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
             </button>
@@ -172,31 +172,31 @@ export const Navbar: React.FC<NavbarProps> = ({
       {mobileMenuOpen && (
         <div
           id="mobile-nav-overlay"
-          className="fixed inset-0 z-30 lg:hidden bg-[#1C1B18]/40 backdrop-blur-md pt-20 px-6 pb-8 flex flex-col justify-between animate-in fade-in duration-200"
+          className="fixed inset-0 z-30 lg:hidden bg-[#172235]/50 backdrop-blur-md pt-20 px-6 pb-8 flex flex-col justify-between animate-in fade-in duration-200"
           onClick={() => setMobileMenuOpen(false)}
         >
-          <div className="space-y-2 py-4 bg-[#FFFCF5] p-5 rounded-2xl border border-[#DED6C8] shadow-xl" onClick={(e) => e.stopPropagation()}>
-            <div className="px-3 pb-3 border-b border-[#DED6C8] flex items-center justify-between">
-              <span className="text-xs font-mono uppercase text-[#6F6A60]">Navigation</span>
-              <span className="text-[11px] text-[#B08D3C] font-mono">Surbhi • Portfolio</span>
+          <div className="space-y-2 py-4 bg-[#FFFDF8] p-5 rounded-2xl border border-[#DDD5C7] shadow-xl" onClick={(e) => e.stopPropagation()}>
+            <div className="px-3 pb-3 border-b border-[#DDD5C7] flex items-center justify-between">
+              <span className="text-xs font-mono uppercase text-[#3D4D65]">Navigation</span>
+              <span className="text-[11px] text-[#C49A4A] font-mono">Surbhi • Portfolio</span>
             </div>
             {navLinks.map((link) => (
               <button
                 key={link.label}
                 id={`mobile-nav-${link.label.toLowerCase()}`}
                 onClick={() => handleNavClick(link.href)}
-                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-left text-[#1C1B18] hover:text-[#B08D3C] hover:bg-[#F1EBDD] border border-transparent hover:border-[#DED6C8] transition-all text-sm font-medium"
+                className="w-full flex items-center justify-between px-4 py-3 rounded-xl text-left text-[#172235] hover:text-[#C49A4A] hover:bg-[#E8EDF3] border border-transparent hover:border-[#D6DFE8] transition-all text-sm font-medium"
               >
                 <span>{link.label}</span>
-                <span className="text-[#6F6A60] text-xs">→</span>
+                <span className="text-[#3D4D65] text-xs">→</span>
               </button>
             ))}
           </div>
 
           <div className="pt-4" onClick={(e) => e.stopPropagation()}>
-            <div className="flex items-center justify-between text-xs font-mono text-[#6F6A60] px-4 py-2 rounded-xl bg-[#FFFCF5] border border-[#DED6C8]">
+            <div className="flex items-center justify-between text-xs font-mono text-[#3D4D65] px-4 py-2 rounded-xl bg-[#FFFDF8] border border-[#DDD5C7]">
               <span>{PERSONAL_INFO.university}</span>
-              <span className="text-[#B08D3C]">{PERSONAL_INFO.targetYear}</span>
+              <span className="text-[#C49A4A]">{PERSONAL_INFO.targetYear}</span>
             </div>
           </div>
         </div>

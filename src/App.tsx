@@ -80,7 +80,7 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen font-sans bg-[#F7F3EA] text-[#1C1B18] relative selection:bg-[#B08D3C]/20 selection:text-[#1C1B18]">
+    <div className="min-h-screen font-sans bg-[#F6F1E8] text-[#172235] relative selection:bg-[#C49A4A]/20 selection:text-[#172235]">
       {/* Global subtle premium paper grain & tactile background texture */}
       <div className="paper-grain-overlay pointer-events-none fixed inset-0 z-0" aria-hidden="true" />
 
